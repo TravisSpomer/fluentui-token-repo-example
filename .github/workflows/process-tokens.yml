@@ -1,0 +1,34 @@
+name: Process tokens
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  process-tokens:
+    name: Process tokens
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the code from GitHub
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: Transform the tokens
+      run: |
+        npm install
+        npm run build
+
+    - name: Save transformed tokens as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: tokens
+        path: build/
+
+    # Here's where you could do other things with your processed tokens, like creating an NPM
+    # or NuGet package, a GitHub Pages site, or whatever else you need.
