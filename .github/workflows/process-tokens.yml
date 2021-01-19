@@ -32,3 +32,12 @@ jobs:
 
     # Here's where you could do other things with your processed tokens, like creating an NPM
     # or NuGet package, a GitHub Pages site, or whatever else you need.
+
+    - name: Rename HTML for GitHub Pages
+      run: mv build/reference/fluentuitokens.html build/reference/index.html
+
+    - name: Deploy HTML to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: build/reference
