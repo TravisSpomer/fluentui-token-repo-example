@@ -31,13 +31,13 @@ jobs:
         path: tokens/
 
     - name: Publish to NPM
+        # git config user.email "travis@microsoft.com"
+        # git config user.name "GitHub Actions bot"
+        # git push
+        # git push --tags
       run: |
-        git config user.email "travis@microsoft.com"
-        git config user.name "GitHub Actions bot"
-        npm version major
-        npm publish --access public
-        git push
-        git push --tags
+        npm version --no-git-tag-version major
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
