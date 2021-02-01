@@ -39,7 +39,7 @@ jobs:
         npm version --no-git-tag-version major
         npm publish
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Rename HTML for GitHub Pages
       run: mv tokens/reference/fluentuitokens.html tokens/reference/index.html
