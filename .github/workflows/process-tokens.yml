@@ -26,10 +26,6 @@ jobs:
       run: |
         npm ci
         npm run build
-      env:
-        # This isn't needed, but since .npmrc refers to it, it'll fail if it's not defined.
-        # If you aren't publishing to NPM, you can remove this part.
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Save transformed tokens as artifact
       uses: actions/upload-artifact@v2
@@ -41,6 +37,7 @@ jobs:
       run: |
         git config user.name "GitHub Actions bot"
         git config user.email "github-action@users.noreply.github.com"
+        npm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
         npm version major -m "Publish package version %s"
         npm publish
         git push
