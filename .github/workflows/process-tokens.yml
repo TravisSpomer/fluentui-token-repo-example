@@ -1,5 +1,8 @@
 name: Process tokens
 
+# Requires a repo secret:
+# NPM_TOKEN: An NPM access token of type "Automation" that is authorized to update the NPM package.
+
 on:
   workflow_dispatch:
   push:
@@ -24,7 +27,8 @@ jobs:
         npm ci
         npm run build
       env:
-        # This isn't needed, but since .npmrc refers to it, it'll fail if it's not defined
+        # This isn't needed, but since .npmrc refers to it, it'll fail if it's not defined.
+        # If you aren't publishing to NPM, you can remove this part.
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Save transformed tokens as artifact
@@ -37,7 +41,7 @@ jobs:
       run: |
         git config user.name "GitHub Actions bot"
         git config user.email "github-action@users.noreply.github.com"
-        npm version major
+        npm version major -m "Publish package version %s"
         npm publish
         git push
         git push --tags
