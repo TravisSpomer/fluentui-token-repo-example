@@ -8,8 +8,7 @@
 		"tokens/**"
 	],
 	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
+		"access": "public"
 	},
 	"devDependencies": {
 		"@travisspomer/fluentui-token-pipeline": "0.2.0-unofficial"
