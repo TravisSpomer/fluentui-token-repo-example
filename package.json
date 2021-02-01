@@ -1,10 +1,14 @@
 {
 	"name": "@travisspomer/fluentui-token-repo-example",
-	"version": "2.0.0",
+	"version": "0.0.1",
 	"description": "Sample token repo using fluentui-token-pipeline",
 	"author": "Travis Spomer <travis@microsoft.com>",
 	"license": "MIT",
 	"files": ["tokens/**"],
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
 	"devDependencies": {
 		"@travisspomer/fluentui-token-pipeline": "0.2.0-unofficial"
 	},
