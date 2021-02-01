@@ -30,9 +30,9 @@ jobs:
         name: tokens
         path: tokens/
 
-    - name: debug
+    - name: debug local
       run: |
-        cat ~/.npmrc
+        cat .npmrc
 
     - name: Publish to NPM
       run: |
