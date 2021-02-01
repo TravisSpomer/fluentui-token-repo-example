@@ -18,7 +18,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-        registry-url: https://registry.npmjs.org/
 
     - name: Transform the tokens
       run: |
@@ -35,6 +34,7 @@ jobs:
       run: |
         git config user.email "travis@microsoft.com"
         git config user.name "GitHub Actions bot"
+        npm config set registry https://registry.npmjs.org/
         npm version major
         npm publish --access public
         git push
