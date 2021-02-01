@@ -33,6 +33,8 @@ jobs:
 
     - name: Publish to NPM
       run: |
+        git config user.email "travis@microsoft.com"
+        git config user.name "GitHub Actions bot"
         npm version major
         npm publish --access public
         git push
