@@ -1,14 +1,14 @@
 {
-	"name": "fluentui-token-repo-example",
+	"name": "@travisspomer/fluentui-token-repo-example",
 	"version": "0.0.1",
 	"description": "Sample token repo using fluentui-token-pipeline",
-	"private": true,
 	"author": "Travis Spomer <travis@microsoft.com>",
 	"license": "MIT",
-	"scripts": {
-		"build": "transform-tokens --in tokens.json --out build"
-	},
+	"files": ["tokens/**"],
 	"devDependencies": {
 		"@travisspomer/fluentui-token-pipeline": "0.2.0-unofficial"
+	},
+	"scripts": {
+		"build": "transform-tokens --in tokens.json --out tokens"
 	}
 }
