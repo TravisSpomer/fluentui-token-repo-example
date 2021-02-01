@@ -30,6 +30,10 @@ jobs:
         name: tokens
         path: tokens/
 
+    - name: debug
+      run: |
+        cat ~/.npmrc
+
     - name: Publish to NPM
       run: |
         git config user.email "travis@microsoft.com"
