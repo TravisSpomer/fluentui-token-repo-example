@@ -31,10 +31,9 @@ jobs:
         path: tokens/
 
     - name: Publish to NPM
+        # git config user.email "travis@microsoft.com"
+        # git config user.name "GitHub Actions bot"
       run: |
-        git config user.email "travis@microsoft.com"
-        git config user.name "GitHub Actions bot"
-        npm config set registry https://registry.npmjs.org/
         npm version major
         npm publish --access public
         git push
