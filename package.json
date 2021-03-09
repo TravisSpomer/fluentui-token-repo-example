@@ -1,6 +1,6 @@
 {
 	"name": "@travisspomer/fluentui-token-repo-example",
-	"version": "8.0.0",
+	"version": "9.0.0",
 	"description": "Sample token repo using @fluentui/token-pipeline",
 	"author": "Travis Spomer <travis@microsoft.com>",
 	"license": "MIT",
