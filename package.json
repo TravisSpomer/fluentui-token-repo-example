@@ -1,7 +1,7 @@
 {
 	"name": "@travisspomer/fluentui-token-repo-example",
 	"version": "7.0.0",
-	"description": "Sample token repo using fluentui-token-pipeline",
+	"description": "Sample token repo using @fluentui/token-pipeline",
 	"author": "Travis Spomer <travis@microsoft.com>",
 	"license": "MIT",
 	"files": [
@@ -11,7 +11,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@travisspomer/fluentui-token-pipeline": "0.3.0-unofficial"
+		"@fluentui/token-pipeline": "0.3.3"
 	},
 	"scripts": {
 		"build": "transform-tokens --in tokens.json --out tokens"
